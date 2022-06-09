@@ -22,3 +22,31 @@ checkCoupon("123", "123", "July 9, 2015", "July 2, 2015")  ===  false
 function checkCoupon(enteredCode, correctCode, currentDate, expirationDate){
     return enteredCode === correctCode && Date.parse(expirationDate) >= Date.parse(currentDate)
   }
+
+
+
+/*  6 Kyu - Replace With Alphabet Position
+
+
+Welcome.
+
+In this kata you are required to, given a string, replace every letter with its position in the alphabet.
+
+If anything in the text isn't a letter, ignore it and don't return it.
+
+"a" = 1, "b" = 2, etc.
+
+Example
+alphabetPosition("The sunset sets at twelve o' clock.")
+Should return "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11" ( as a string )
+
+
+*/
+
+//SOLUTION 
+
+
+function alphabetPosition(text) {
+    return text.split('').filter(x => x.toUpperCase() != x.toLowerCase()).map((y,i) => y.toLowerCase()).map((j,i) => j.charCodeAt(0) - 96).join(' ')
+  }
+
