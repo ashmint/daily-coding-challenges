@@ -19,3 +19,25 @@ If you can, try writing it in one line of code.
 function findDifference(a, b) {
     return Math.abs((a.reduce((acc, x) => acc * x, 1) - b.reduce((ac, y) => ac * y, 1)))
 }
+
+
+
+/* 7 Kyu - Remove anchor from URL
+
+
+Complete the function/method so that it returns the url with anything after the anchor (#) removed.
+
+Examples
+"www.codewars.com#about" --> "www.codewars.com"
+"www.codewars.com?page=1" -->"www.codewars.com?page=1"
+
+
+*/
+
+
+//SOLUTION
+
+
+function removeUrlAnchor(url) {
+    return url.split('#')[0];
+}
