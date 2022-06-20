@@ -57,3 +57,27 @@ Happy coding!
 function reverse(string) {
     return string.split(' ').reverse().join(' ');
 }
+
+
+/* 8 Kyu - Remove duplicates from list
+
+
+Define a function that removes duplicates from an array of numbers and returns it as a result.
+
+The order of the sequence has to stay the same.
+
+*/
+
+
+//SOLUTION 
+
+
+function distinct(a) {
+    let b = []
+    a.forEach(x => {
+        if (!b.includes(x)) {
+            b.push(x)
+        }
+    });
+    return b
+}
