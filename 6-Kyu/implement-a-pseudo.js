@@ -27,37 +27,36 @@ Have fun coding it and please don't forget to vote and rank this kata! :-)
 
 
 function encrypt(text, n) {
-  if (!text || n <= 0){
-    return text;
-  }
-  else{
-  let evenString, oddString
-  let concatString = ''
-  for(i=0;i<n;i++){
-   evenString = text.split('').filter((x,j)=> j % 2 === 0).join('')  
-   oddString = text.split('').filter((x,j)=> j % 2 !== 0).join('')
-   concatString = (oddString + evenString) 
-   text = concatString;
-  }
-  return concatString; 
- }
- }
- 
- 
-  
- function decrypt(encryptedText, n) {
-   if (!encryptedText || n <= 0) return encryptedText;
-   const ans = new Array(encryptedText.length);
-   while (n--) {
-     let j = 0;
-     for (let i = 1; i < ans.length; i += 2) {
-       ans[i] = encryptedText[j++];
-     }
-     for (let i = 0; i < ans.length; i += 2) {
-       ans[i] = encryptedText[j++];
-     }
-     encryptedText = ans.join('');
+    if (!text || n <= 0){
+      return text;
+    }
+    else{
+    let evenString, oddString
+    let concatString = ''
+    for(i=0;i<n;i++){
+     evenString = text.split('').filter((x,j)=> j % 2 === 0).join('')  
+     oddString = text.split('').filter((x,j)=> j % 2 !== 0).join('')
+     concatString = (oddString + evenString) 
+     text = concatString;
+    }
+    return concatString; 
    }
-   return encryptedText;
- }
-
+   }
+   
+   
+    
+   function decrypt(encryptedText, n) {
+     if (!encryptedText || n <= 0) return encryptedText;
+     const ans = new Array(encryptedText.length);
+     while (n--) {
+       let j = 0;
+       for (let i = 1; i < ans.length; i += 2) {
+         ans[i] = encryptedText[j++];
+       }
+       for (let i = 0; i < ans.length; i += 2) {
+         ans[i] = encryptedText[j++];
+       }
+       encryptedText = ans.join('');
+     }
+     return encryptedText;
+   }
